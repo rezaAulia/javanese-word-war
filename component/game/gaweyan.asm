@@ -1,21 +1,21 @@
 
 
 section .data
-	_kategori_umum_header db "===================== Mulai Bermain Dengan Kategori Umum =======================",0x0a
-	len_kategori_umum_header dd $-_kategori_umum_header
+	_kategori_gaweyan_header db "===================== Mulai Bermain Dengan Kategori gaweyan =====================",0x0a
+	len_kategori_gaweyan_header dd $-_kategori_gaweyan_header
 	
 section .text
 
-jmp not_umum
+jmp not_gaweyan
 
- _start_kategori_umum:
+ _start_kategori_gaweyan:
 	
  	call _generate_new_game_data
-	push _kategori_umum_header
+	push _kategori_gaweyan_header
 	call _print_function
 	
 	.soal_berikutnya: 
-	call _get_word_umum
+	call _get_word_gaweyan
 	.jawab_berikutnya:
 	call _print_header_game_status
 
@@ -38,4 +38,4 @@ jmp not_umum
 	call _main_menu
  ret
 
- not_umum:
+ not_gaweyan:

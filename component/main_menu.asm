@@ -1,7 +1,7 @@
 
 
 section .data
-	menu db "1.Mulai Main",10,"2.Bantuan",0x0a,"3.Skor Tertinggi",0x0a,"4.Keluar",0x0a,"Pilih Menu:",0x0a
+	menu db "|1.| Mulai Main",10,"|2.| Bantuan",0x0a,"|3.| Keluar",0x0a,"================================== Pilih Menu: =================================",0x0a
 	len_menu dd $-menu
 	_repeat db "Pilihan tidak ditemukan:",0x0a
 	_len_repeat dd $-_repeat
@@ -22,15 +22,13 @@ section .text
 
 		_main_menu_selection:
 		mov eax, DWORD[sentence]
-		mov ebx, '4'
+		mov ebx, '3'
 		cmp eax,ebx
 		je exit
 		mov ebx,'2'
 		cmp ebx,eax
 		je _help
-		mov ebx,'3'
-		cmp ebx,eax
-		je _high_score
+		
 		mov ebx,'1'
 		cmp ebx,eax
 		je _start_game

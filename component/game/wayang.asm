@@ -1,7 +1,7 @@
 
 
 section .data
-	_kategori_wayang_header db "Mulai Bermain Dengan Kategori Wayang",0x0a
+	_kategori_wayang_header db "===================== Mulai Bermain Dengan Kategori Wayang =====================",0x0a
 	len_kategori_wayang_header dd $-_kategori_wayang_header
 	
 section .text

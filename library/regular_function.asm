@@ -1,6 +1,6 @@
 
 section .data
-	game_title db "Javanese Word War",0x0a,"Sebuah Kata dapat Membuatmu sengsara!",0x0a
+	game_title db "*******************************Javanese Word War********************************",0x0a,"=====================Sebuah Kata dapat Membuatmu sengsara!======================",0x0a,"================================================================================",0x0a
 	len_game_title dd $-game_title
 	
 	new_line db "",0x0a

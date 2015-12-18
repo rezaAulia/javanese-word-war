@@ -1,5 +1,5 @@
 section .data
-  _choose_weapon_text db "Pilih Senjatamu:",0x0a,"Harga Menggunakan Skor yang telah diperoleh",0x0a,"1. Buka Kata Urutan Ganjil (Harga 50)",0x0a,"2. Buka Kata Urutan Genap (Harga 50)",0x0a,"3. Terjemahkan Petunjuk Soal (Harga 20)",0x0a,"4. Buka Huruf pertama dan Terakhir (Harga 10)",0x0a,"5. Lewati Soal Ini (Harga 100)",0x0a,"6. Tambah 3 Nyawa (Harga 100)",0x0a,"0. Kembali",0x0a,"Masukkan Pilihanmu",0x0a
+  _choose_weapon_text db "================================================================================",0X0A,"Pilih Senjatamu:",0x0a,"================================================================================",0X0A,"Harga Menggunakan Skor yang telah diperoleh",0x0a,"================================================================================",0X0A,"|1.| Buka Kata Urutan Ganjil (Harga 50)",0x0a,"|2.| Buka Kata Urutan Genap (Harga 50)",0x0a,"|3.| Terjemahkan Petunjuk Soal (Harga 20)",0x0a,"|4.| Buka Huruf pertama dan Terakhir (Harga 10)",0x0a,"|5.| Lewati Soal Ini (Harga 100)",0x0a,"|6.| Tambah 3 Nyawa (Harga 100)",0x0a,"|0.| Kembali",0x0a,"================================================================================",0X0A,"Masukkan Pilihanmu",0x0a
   len_choose_weapon_text dd $-_choose_weapon_text
 section .bss
 

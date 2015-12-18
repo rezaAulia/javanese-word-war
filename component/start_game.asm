@@ -1,8 +1,8 @@
 
 section .data
-    header_category db "Kategori Permainan",0x0a
+    header_category db "============================= Kategori Permainan ===============================",0x0a
     len_header_category dd $-header_category
-    category_list db "1.Kategori Umum",0x0a,"2.Kategori Wayang",0x0a,"0.Kembali ke Menu Utama",0x0a,"Pilih Kategori:",0x0a
+    category_list db "|1.| Kategori Umum",0x0a,"|2.| Kategori Wayang",0x0a,"|3.| Kategori Gaweyan",0x0a,"============================ [0] Kembali ke Menu Utama =========================",0x0a,"============================= Pilih Kategori: ==================================",0x0a
     len_category_list dd $-category_list
    
 
@@ -32,16 +32,33 @@ section .text
 		
 		call _print_function
 		call _scan_function
-		mov eax, DWORD[sentence]
-		mov ebx, '0'
-		cmp eax,ebx
-		je _main_menu
-		mov ebx, '1'
-		cmp eax,ebx
-		je _start_kategori_umum
-		mov ebx, '2'
-		cmp eax,ebx
-		je _start_kategori_wayang
+		_category_selection:
+			mov eax, DWORD[sentence]
+			mov ebx, '0'
+			cmp eax,ebx
+			je _main_menu
+			mov ebx, '1'
+			cmp eax,ebx
+			je _start_kategori_umum
+			mov ebx, '2'
+			cmp eax,ebx
+			je _start_kategori_wayang
+			mov ebx, '3'
+			cmp eax,ebx
+			je _start_kategori_gaweyan
+
+			jmp .option_not_found
+			
+	    
+
+
+		.option_not_found:
+			push _repeat
+			call _print_function
+			call _scan_function
+			jmp _category_selection
+
+
 	ret	
 
 

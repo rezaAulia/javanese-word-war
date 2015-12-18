@@ -6,33 +6,33 @@ section .data
 	len_clue_1_soal_1 dd $-_clue_1_soal_1
 	_clue_2_soal_1 db "Satria Pringgondani"
 	len_clue_2_soal_1 dd $-_clue_2_soal_1
-	_jawaban_soal_1 dd 71,65,84,72,85,84,75,65,67,65
+	_jawaban_soal_1 dd 71,65,84,79,84,75,65,67,65
 
-	len_jawaban_soal_1 dd 10
+	len_jawaban_soal_1 dd 9
 	
-	_clue_1_soal_2 db "Satria kembar"
+	_clue_1_soal_2 db "Satria kembar, Nakula lan "
 	len_clue_1_soal_2 dd $-_clue_1_soal_2
 	_clue_2_soal_2 db "Simbol karahayoning negara"
 	len_clue_2_soal_2 dd $-_clue_2_soal_2
-	_jawaban_soal_2 dd 78,65,75,85,76,65,83,65,68,69,87,65
+	_jawaban_soal_2 dd 83,65,68,69,87,65;SADEWA
 
-	len_jawaban_soal_2 dd 12
+	len_jawaban_soal_2 dd 6
 	
 	_clue_1_soal_3 db "Si kethek putih"
 	len_clue_1_soal_3 dd $-_clue_1_soal_3
 	_clue_2_soal_3 db "salah sawijining tokoh ing mahabarata"
 	len_clue_2_soal_3 dd $-_clue_2_soal_3
-	_jawaban_soal_3 dd 72,65,78,79,77,65,78
+	_jawaban_soal_3 dd 72,65,78,79,77,65,78;HANOMAN
 
 	len_jawaban_soal_3 dd 7
 	
-	_clue_1_soal_4 db "Pusakane Semar"
+	_clue_1_soal_4 db "Salah sawijining punakawan kang dadi tokoh utama ing pewayangan jawa lan sunda"
 	len_clue_1_soal_4 dd $-_clue_1_soal_4
-	_clue_2_soal_4 db "Senjata yang digunakan Semar"
+	_clue_2_soal_4 db "Salah satu punakawan yang menjadi tokoh utama dalam pewayangan jawa dan sunda"
 	len_clue_2_soal_4 dd $-_clue_2_soal_4
-	_jawaban_soal_4 dd 75,65,76,73,77,65,83,65,68,65
+	_jawaban_soal_4 dd 83,69,77,65,82;SEMAR
 
-	len_jawaban_soal_4 dd 10
+	len_jawaban_soal_4 dd 5
 	
 	_clue_1_soal_5 db "Salah sawijining Punakawan kang handuweni pawakan dhuwur, gering, irung mancung lan tangan dawa"
 	len_clue_1_soal_5 dd $-_clue_1_soal_5
@@ -130,13 +130,13 @@ section .data
 
 	len_jawaban_soal_16 dd 7
 	
-	_clue_1_soal_17 db "Gamane Bima kanggo ngalahake Sengkuni"
+	_clue_1_soal_17 db "Gamane Bima kanggo ngalahake Sengkuni yaitu kuku..."
 	len_clue_1_soal_17 dd $-_clue_1_soal_17
 	_clue_2_soal_17 db "Digawe saka gading gajah"
 	len_clue_2_soal_17 dd $-_clue_2_soal_17
-	_jawaban_soal_17 dd 75,85,75,85,80,65,78,67,65,78,65,75,65
+	_jawaban_soal_17 dd 80,65,78,67,65,78,65,75,65
 
-	len_jawaban_soal_17 dd 13
+	len_jawaban_soal_17 dd 9
 	
 	_clue_1_soal_18 db "Wong kang nyulik Dewi Sinta, satriya ing Alengka"
 	len_clue_1_soal_18 dd $-_clue_1_soal_18
@@ -150,9 +150,9 @@ section .data
 	len_clue_1_soal_19 dd $-_clue_1_soal_19
 	_clue_2_soal_19 db "Suami dari Dewi Sinta"
 	len_clue_2_soal_19 dd $-_clue_2_soal_19
-	_jawaban_soal_19 dd 82,65,77,65,87,73,74,65,89,65
+	_jawaban_soal_19 dd 82,65,77,65,
 
-	len_jawaban_soal_19 dd 10
+	len_jawaban_soal_19 dd 4
 	
 	_clue_1_soal_20 db "Salah sawiijining putra saka Abimanyu kang mati dicakot naga Taksaka"
 	len_clue_1_soal_20 dd $-_clue_1_soal_20
@@ -174,10 +174,10 @@ push eax
 push ebx
 push ecx
 push edx
-jmp .akhir
+
 	mov eax,20
 	call _random_integer_with_modulo
-
+	
 
 	
 	cmp eax,0
@@ -256,7 +256,7 @@ jmp .akhir
 			mov [_underscore_soal_cur+ecx*4],eax
 			pop ecx
 			inc ecx
-			cmp ecx,10
+			cmp ecx,9
 
 		jne .loopArray1
 		
@@ -299,7 +299,7 @@ jmp .akhir
 			mov [_underscore_soal_cur+ecx*4],eax
 			pop ecx
 			inc ecx
-			cmp ecx,12
+			cmp ecx,6
 
 		jne .loopArray2
 		
@@ -381,7 +381,7 @@ jmp .akhir
 			mov [_underscore_soal_cur+ecx*4],eax
 			pop ecx
 			inc ecx
-			cmp ecx,10
+			cmp ecx,5
 
 		jne .loopArray4
 		
@@ -913,7 +913,7 @@ jmp .akhir
 			mov [_underscore_soal_cur+ecx*4],eax
 			pop ecx
 			inc ecx
-			cmp ecx,13
+			cmp ecx,9
 
 		jne .loopArray17
 		
@@ -996,7 +996,7 @@ jmp .akhir
 			mov [_underscore_soal_cur+ecx*4],eax
 			pop ecx
 			inc ecx
-			cmp ecx,10
+			cmp ecx,4
 
 		jne .loopArray19
 		

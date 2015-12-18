@@ -23,6 +23,10 @@ global _start
 		jmp not_get_function
 		%include "component/game/databaseWayang.asm"
 		jmp not_get_function
+		%include "component/game/gaweyan.asm"
+		jmp not_get_function
+		%include "component/game/databaseGaweyan.asm"
+		jmp not_get_function
 	
 
 

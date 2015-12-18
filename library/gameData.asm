@@ -1,11 +1,11 @@
 section .data
-	_life_text db "Life: "
+	_life_text db "| Life: "
 	len_life_text dd $-_life_text
 
-	_score_text db "Score: "
+	_score_text db "=====================",0x0a,"| Score: "
 	len_score_text dd $-_score_text
 
-	heart_text db '♥'
+	heart_text db '[♥]'
     len_heart_text dd $-heart_text
     underscore_text db '_'
     len_underscore_text dd $-underscore_text
@@ -13,7 +13,7 @@ section .data
     _total_score dd 0
     len_total_score dd $-_total_score
 
-    _weapon_text db "Tekan Angka 9 pada pilihan jawaban untuk mengakses persenjataan!",0x0a
+    _weapon_text db "Tekan Angka 9 pada pilihan jawaban untuk mengakses persenjataan!",0x0a,"================================================================================",0x0a
     len_weapon_text dd $-_weapon_text
 
     _get_answer_column_text db "Pilih Kolom yang ingin dijawab",0x0a
@@ -28,12 +28,12 @@ section .data
      _not_valid_text db "PILIHAN ANDA TIDAK VALID",0x0a
     len_not_valid_text dd $-_not_valid_text
 
-    _salah_text db "MAAF ANDA SALAH. ANDA GOBLOK!!!!",0x0a
+    _salah_text db "========== MAAF JAWABAN ANDA SALAH. SILAHKAN MENCOBA LAGI. ==========",0x0a
     len_salah_text dd $-_salah_text
-    _game_over_text db "GAME OVER",0x0a,"Skor Anda: "
+    _game_over_text db "============================== GAME OVER =========================",0x0a,"Skor Anda: "
     len_game_over_text dd $-_game_over_text
 	
-    _selesai_soal_text db "SELAMAT ANDA MENYELESAIKAN SOAL",0x0a,"JAWABAN DARI SOAL INI ADALAH:"
+    _selesai_soal_text db "============= SELAMAT ANDA MENYELESAIKAN SOAL ===============",0x0a,"JAWABAN DARI SOAL INI ADALAH:"
     len_selesai_soal_text dd $-_selesai_soal_text
 
     _selesai_soal_total_soal_text db "Total Soal Terselesaikan: "
