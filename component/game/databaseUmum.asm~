@@ -1,0 +1,98 @@
+
+
+section .data
+	;database soal umum
+	_clue_1_soal_1 db "Ini Pertanyaannya ya!!"
+	len_clue_1_soal_1 dd $-_clue_1_soal_1
+	_clue_2_soal_1 db "Clue_2"
+	len_clue_2_soal_1 dd $-_clue_2_soal_1
+	_jawaban_soal_1 dd 74,65,87,65,66,65,78
+
+	len_jawaban_soal_1 dd 7
+
+
+
+
+section .bss
+    
+
+section .text
+
+jmp not_database_umum
+
+_get_word_umum:
+push eax
+push ebx
+push ecx
+push edx
+	mov eax,1
+	call _random_integer_with_modulo
+
+
+	cmp eax,0
+	je .soal_no_1
+	jmp .akhir
+
+
+
+
+
+	.soal_no_1:
+	 lea edi, [_clue_1_soal_cur]
+	 lea esi, [_clue_1_soal_1]
+  	 call _copy_string
+
+
+	lea esi, [len_clue_1_soal_1]
+	lea edi, [len_clue_1_soal_cur]
+  	call _copy_string
+	
+	lea esi, [_clue_2_soal_1]
+	lea edi, [_clue_2_soal_cur]
+  	call _copy_string
+	
+	lea esi, [len_clue_2_soal_1]
+	lea edi, [len_clue_2_soal_cur]
+  	call _copy_string
+  
+  	mov ecx,0
+
+
+	.loopArray:
+	push ecx
+	lea esi, [_jawaban_soal_1+ecx*4]
+	lea edi, [_jawaban_soal_cur+ecx*4]
+   	call _copy_string
+   	mov eax,"_"
+  	mov [_underscore_soal_cur+ecx*4],eax
+  	pop ecx
+  	inc ecx
+  	cmp ecx,7
+
+  	jne .loopArray
+	
+
+
+	lea esi, [len_jawaban_soal_1]
+	lea edi, [len_jawaban_soal_cur]
+  	call _copy_string
+
+
+	jmp .akhir
+	 
+     
+	
+    
+	 
+	
+
+	.akhir:
+	
+
+	pop eax
+pop ebx
+pop ecx
+pop edx
+ret
+
+ not_database_umum:
